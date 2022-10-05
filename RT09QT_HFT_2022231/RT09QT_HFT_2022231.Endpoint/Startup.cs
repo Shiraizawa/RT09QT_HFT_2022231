@@ -32,7 +32,7 @@ namespace RT09QT_HFT_2022231.Endpoint
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync("Hello World");
                 });
             });
         }

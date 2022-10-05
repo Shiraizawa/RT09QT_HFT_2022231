@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hallgato\\Downloads\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj": {}
+    "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hallgato\\Downloads\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj": {
+    "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hallgato\\Downloads\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+        "projectUniqueName": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
         "projectName": "RT09QT_HFT_2022231.Client",
-        "projectPath": "C:\\Users\\hallgato\\Downloads\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+        "projectPath": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
         "packagesPath": "C:\\Users\\hallgato\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hallgato\\Downloads\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\obj\\",
+        "outputPath": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
