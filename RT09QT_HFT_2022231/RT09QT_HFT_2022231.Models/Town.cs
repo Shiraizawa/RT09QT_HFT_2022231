@@ -10,6 +10,8 @@ namespace RT09QT_HFT_2022231.Models
 {
     public class Town
     {
+
+        //TODO add reference to other tables
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TownID { get; set; }
