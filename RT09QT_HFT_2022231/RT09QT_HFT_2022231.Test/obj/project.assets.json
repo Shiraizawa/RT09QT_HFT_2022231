@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\RT09QT_HFT_2022231.Test.csproj",
+      "projectUniqueName": "C:\\Users\\hallgato\\Source\\Repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\RT09QT_HFT_2022231.Test.csproj",
       "projectName": "RT09QT_HFT_2022231.Test",
-      "projectPath": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\RT09QT_HFT_2022231.Test.csproj",
+      "projectPath": "C:\\Users\\hallgato\\Source\\Repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\RT09QT_HFT_2022231.Test.csproj",
       "packagesPath": "C:\\Users\\hallgato\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\obj\\",
+      "outputPath": "C:\\Users\\hallgato\\Source\\Repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
