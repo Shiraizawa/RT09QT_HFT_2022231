@@ -9,21 +9,19 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Models
 {
-   public class Village
+   public class Country
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int VillageID { get; set; }
+        public int CountryID { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string VillageName { get; set; }
-        ICollection<Inhabitant> Inhabitants { get; set; }
-        public Village(int ID, string name, Inhabitant inhabitants)
+        public string CountryName { get; set; }
+        public Country(int ID, string name)
         {
-            this.Inhabitants = (ICollection<Inhabitant>)inhabitants;
-            this.VillageName = name;
-            this.VillageID = ID;
+            this.CountryName = name;
+            this.CountryID = ID;
         }
     }
 }

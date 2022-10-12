@@ -21,19 +21,19 @@ namespace RT09QT_HFT_2022231.Models
         {
             get; set;
         }
-        [StringLength(200)]
-        string Address { get; set; }
+
+        int LocationID { get; set; }
         
         int Age { get; set; }
         [Required]
         [StringLength(100)]
         string MothersName { get; set; }
 
-        public Inhabitant(int ID,string name, string address, int age, string mothersName)
+        public Inhabitant(int ID,string name, int LocationID, int age, string mothersName)
         {
             this.InhabitantID = ID;
             this.Name = name;
-            this.Address = address;
+            this.LocationID = LocationID;
             this.Age = age;
             this.MothersName = mothersName;
         }

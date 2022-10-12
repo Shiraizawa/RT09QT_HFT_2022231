@@ -19,11 +19,13 @@ namespace RT09QT_HFT_2022231.Models
         public string TownName { get; set; }
 
         ICollection<Inhabitant> Inhabitants { get; set; }
+        public int CountryID { get; set; }
 
-        public Town(int ID, string name, Inhabitant inhabitants)
+        public Town(int ID, string name, int CountryID, Inhabitant inhabitants)
         {
             this.TownID = ID;
             this.TownName = name;
+            this.CountryID = CountryID;
             this.Inhabitants = (ICollection<Inhabitant>)inhabitants;
         }
     }
