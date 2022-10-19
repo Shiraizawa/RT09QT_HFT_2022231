@@ -11,5 +11,20 @@ namespace RT09QT_HFT_2022231.Repository
         public DbSet<Inhabitant> Inhabitants { get; set; }
         public DbSet<Town> Towns { get; set; }
 
+        public CountryDbContext()
+        {
+            this.Database.EnsureCreated();
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        {
+            if (!builder.IsConfigured)
+            {
+                string conn =
+                    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\country.mdf;Integrated Security=True;MultipleActiveResultSets= true";
+                builder
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(conn);
+            }
+        }
     }
 }
