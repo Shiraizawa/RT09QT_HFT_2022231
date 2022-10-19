@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RT09QT_HFT_2022231.Models\RT09QT_HFT_2022231.Models.csproj" />
+  </ItemGroup>
+
 </Project>
