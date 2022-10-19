@@ -26,5 +26,10 @@ namespace RT09QT_HFT_2022231.Repository
                     .UseSqlServer(conn);
             }
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // create entity builders
+        }
     }
 }
