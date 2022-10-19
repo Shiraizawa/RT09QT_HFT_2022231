@@ -10,5 +10,6 @@ namespace RT09QT_HFT_2022231.Repository
         public DbSet<Country> Countries { get; set; }
         public DbSet<Inhabitant> Inhabitants { get; set; }
         public DbSet<Town> Towns { get; set; }
+
     }
 }
