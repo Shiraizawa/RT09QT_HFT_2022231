@@ -18,6 +18,9 @@ namespace RT09QT_HFT_2022231.Models
         [Required]
         [StringLength(100)]
         public string CountryName { get; set; }
+
+        ICollection<City> Cities { get; set; }
+        ICollection<Town> Towns { get; set; }
         public Country(int ID, string name)
         {
             this.CountryName = name;
