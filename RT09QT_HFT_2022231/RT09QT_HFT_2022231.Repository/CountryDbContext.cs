@@ -28,8 +28,15 @@ namespace RT09QT_HFT_2022231.Repository
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // create entity builders
+        { // create entity builders
+            modelBuilder.Entity<City>(city => city
+            .HasOne(city => city.CityName)
+            .HasForeignKey(city => city.CountryID)
+            .OnDelete(DeletBehavior.Cascade));
+
+            modelBuilder.Entity<Country>()
+                .HasOne(x => x.CountryName)
+            
         }
     }
 }
