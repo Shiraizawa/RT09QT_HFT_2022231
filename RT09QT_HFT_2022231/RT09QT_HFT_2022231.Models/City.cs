@@ -20,15 +20,22 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(100)]
         public string CityName { get; set; }
 
-        ICollection<Inhabitant> Inhabitants { get; set; }
+        public ICollection<Inhabitant> Inhabitants { get; set; }
 
         public int CountryID { get; set; }
+        public Country HomeCountry { get; set; }
         public City(int ID, string name,int CountryID, Inhabitant inhabitants)
         {
             this.CityID = ID;
             this.CityName = name;
             this.CountryID = CountryID;
             this.Inhabitants = (ICollection<Inhabitant>)inhabitants;
+        }
+        public City(int ID, string name, int CountryID)
+        {
+            this.CityID = ID;
+            this.CityName = name;
+            this.CountryID = CountryID;
         }
     }
 }
