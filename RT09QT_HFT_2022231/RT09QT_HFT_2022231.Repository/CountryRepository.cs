@@ -7,7 +7,17 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Repository
 {
-    public class CountryRepository
+    public interface ICountryRepository
+    {
+        public void Create(Country country);
+        public void Update(Country country);
+
+        public void Delete(int id);
+        public Country Read(int id);
+        public IQueryable<Country> ReadAll();
+    }
+
+    public class CountryRepository : ICountryRepository
     {
         CountryDbContext context;
         public CountryRepository(CountryDbContext context)

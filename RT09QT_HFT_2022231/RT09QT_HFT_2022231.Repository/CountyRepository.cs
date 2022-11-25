@@ -7,7 +7,17 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Repository
 {
-    public class CountyRepository
+    public interface ICountyRepository
+    {
+        public void Create(County county);
+        public void Update(County county);
+
+        public void Delete(int id);
+        public County Read(int id);
+        public IQueryable<County> ReadAll();
+
+    }
+    public class CountyRepository : ICountyRepository
     {
        
         CountryDbContext context;
