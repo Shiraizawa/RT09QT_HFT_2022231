@@ -65,11 +65,11 @@ namespace RT09QT_HFT_2022231.Repository
 
             modelBuilder.Entity<Town>().HasData(new Town[]
             {
-                new Town("1#Abadkend#1"),
-                new Town("2#Abad#1"),
-                new Town("3#Dinant#2"),
-                new Town("4#Killarney#3"),
-                new Town("5#Ribe#4")
+                new Town("1#Abadkend#1#2680"),
+                new Town("2#Abad#1#1716"),
+                new Town("3#Dinant#2#13544"),
+                new Town("4#Killarney#3#386"),
+                new Town("5#Ribe#4#8257")
 
             });
 
