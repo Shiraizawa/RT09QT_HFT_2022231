@@ -17,7 +17,7 @@ namespace RT09QT_HFT_2022231.Models
 
         [Required]
         [StringLength(100)]
-        public string CityName { get; set; }
+        public string CountyName { get; set; }
 
 
         public int CountryID { get; set; }
@@ -27,14 +27,14 @@ namespace RT09QT_HFT_2022231.Models
         public County(int ID, string name, int CountryID)
         {
             this.CountyID = ID;
-            this.CityName = name;
+            this.CountyName = name;
             this.CountryID = CountryID;
         }
         public County(string input)
         {
             string[] cutInput = input.Split("#");
             this.CountyID = int.Parse(cutInput[0]);
-            this.CityName = cutInput[1];
+            this.CountyName = cutInput[1];
             this.CountryID= int.Parse(cutInput[2]); 
         }
         public County()
