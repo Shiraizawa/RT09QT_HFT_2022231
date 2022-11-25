@@ -24,11 +24,21 @@ namespace RT09QT_HFT_2022231.Logic
 
         public void Delete(int id)
         {
-            this.repository.Delete(id);
+            var town = this.repository.Read(id);
+            if (town == null)
+            {
+                throw new ArgumentException("This town does not exist");
+            }
+                this.repository.Delete(id);
         }
 
         public Town Read(int id)
         {
+            var town = this.repository.Read(id);
+            if (town == null)
+            {
+                throw new ArgumentException("This town does not exist");
+            }
             return this.repository.Read(id);
         }
 

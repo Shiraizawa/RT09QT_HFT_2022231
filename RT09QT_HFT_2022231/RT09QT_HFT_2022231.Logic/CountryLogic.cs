@@ -17,16 +17,30 @@ namespace RT09QT_HFT_2022231.Test
 
         public void Create(Country country)
         {
-            this.repository.Create(country);
+            if (country.CountryName.Length < 4) { throw new ArgumentException("Country name is too short."); }
+            else
+            {
+                this.repository.Create(country);
+            }
         }
 
         public void Delete(int id)
         {
-            this.repository.Delete(id);
+            var Country = this.repository.Read(id);
+            if (Country == null)
+            {
+                throw new ArgumentException("This country does not exist");
+            }
+                this.repository.Delete(id);
         }
 
         public Country Read(int id)
         {
+            var Country = this.repository.Read(id);
+            if(Country == null)
+            {
+                throw new ArgumentException("This country does not exist");
+            }
            return this.repository.Read(id);
         }
 
@@ -38,6 +52,12 @@ namespace RT09QT_HFT_2022231.Test
        public void Update(Country country)
         {
             this.repository.Update(country);
+        }
+        public int? GetCountyCountPerCountry(int countryId)
+        {
+            return this.repository
+                .ReadAll()
+                .Where(t => t.CountryID == countryId).Count();
         }
     }
 }
