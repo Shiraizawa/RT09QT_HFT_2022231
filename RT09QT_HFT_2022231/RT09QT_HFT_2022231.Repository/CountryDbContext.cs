@@ -6,7 +6,7 @@ namespace RT09QT_HFT_2022231.Repository
 {
     public class CountryDbContext : DbContext
     {
-        public DbSet<City> Cities { get; set; }
+        public DbSet<County> Counties { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Town> Towns { get; set; }
 
@@ -18,6 +18,7 @@ namespace RT09QT_HFT_2022231.Repository
         {
             if (!builder.IsConfigured)
             {
+                string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\country.mdf;Integrated Security=True;MultipleActiveResultSets=true";
                 builder
                     .UseInMemoryDatabase("country")
                     .UseLazyLoadingProxies();
@@ -28,54 +29,50 @@ namespace RT09QT_HFT_2022231.Repository
         { // create entity builders
 
             modelBuilder.Entity<Country>()
-                .HasMany(x => x.Cities)
+                .HasMany(x => x.Counties)
                 .WithOne(x=>x.HomeCountry)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
-            modelBuilder.Entity<Country>()
-                .HasMany(x => x.Towns)
-                .WithOne(x => x.HomeCountry)
-                .OnDelete(DeleteBehavior.Cascade)
-            ;
 
-            modelBuilder.Entity<City>()
-                .HasOne(x=>x.HomeCountry)
-                .WithMany(x=>x.Cities)
-                .HasForeignKey(x=>x.CountryID)
+
+            modelBuilder.Entity<County>()
+                .HasMany(x=> x.Towns)
+                .WithOne(x=> x.HomeCounty)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
 
             modelBuilder.Entity<Town>()
-                .HasOne(x => x.HomeCountry)
+                .HasOne(x => x.HomeCounty)
                 .WithMany(x => x.Towns)
-                .HasForeignKey(x => x.CountryID)
+                .HasForeignKey(x => x.CountyID)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
 
             modelBuilder.Entity<Country>().HasData(new Country[]{
-                new Country(1,"Azerbaijan"),
-                new Country(2,"Belgium"),
-                new Country(3,"Canada"),
-                new Country(4,"Denmark")
+                new Country("1#Azerbaijan"),
+                new Country("2#Belgium"),
+                new Country("3#Canada"),
+                new Country("4#Denmark")
+            });
+
+            modelBuilder.Entity<County>().HasData(new County[]
+            {
+                new County("1#Salyan District#1"),
+                new County("2#Namur#2"),
+                new County("3#Ontario#3"),
+                new County("4#Ribe County#4")
             });
 
             modelBuilder.Entity<Town>().HasData(new Town[]
             {
-                new Town(1,"Abadkend",1),
-                new Town(2,"Abad",1),
-                new Town(3,"Dinant",2),
-                new Town(4,"Killarney",3),
-                new Town(5,"Ribe",4)
+                new Town("1#Abadkend#1"),
+                new Town("2#Abad#1"),
+                new Town("3#Dinant#2"),
+                new Town("4#Killarney#3"),
+                new Town("5#Ribe#4")
 
             });
 
-            modelBuilder.Entity<City>().HasData(new City[]
-            {
-                new City(1,"Baku",1),
-                new City(2,"Brussels",2),
-                new City(3,"Quebec", 3),
-                new City(4,"Aarhus",4)
-            });
 
         }
     }

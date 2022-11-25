@@ -19,12 +19,22 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(100)]
         public string CountryName { get; set; }
 
-       public ICollection<City> Cities { get; set; }
-       public  ICollection<Town> Towns { get; set; }
+       virtual public ICollection<County> Counties { get; set; }
         public Country(int ID, string name)
         {
             this.CountryName = name;
             this.CountryID = ID;
+        }
+
+        public Country(string input)
+        {
+            string[] cutInput = input.Split("#");
+            this.CountryID = int.Parse(cutInput[0]);
+            this.CountryName = cutInput[1];
+        }
+        public Country()
+        {
+
         }
     }
 }

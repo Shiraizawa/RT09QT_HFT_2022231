@@ -1,0 +1,12 @@
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\bin\Debug\net5.0\RT09QT_HFT_2022231.Models.deps.json
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\bin\Debug\net5.0\RT09QT_HFT_2022231.Models.dll
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\bin\Debug\net5.0\RT09QT_HFT_2022231.Models.pdb
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.csproj.AssemblyReference.cache
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.AssemblyInfoInputs.cache
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.AssemblyInfo.cs
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.csproj.CoreCompileInputs.cache
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.dll
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\refint\RT09QT_HFT_2022231.Models.dll
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\RT09QT_HFT_2022231.Models.pdb
+C:\Users\amorgos\source\repos\RT09QT_HFT_2022231\RT09QT_HFT_2022231\RT09QT_HFT_2022231.Models\obj\Debug\net5.0\ref\RT09QT_HFT_2022231.Models.dll

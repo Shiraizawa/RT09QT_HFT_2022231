@@ -11,7 +11,7 @@ namespace RT09QT_HFT_2022231.Models
     public class Town
     {
 
-        //TODO add reference to other tables
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TownID { get; set; }
@@ -20,22 +20,26 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(100)]
         public string TownName { get; set; }
 
-        ICollection<Inhabitant> Inhabitants { get; set; }
-        public int CountryID { get; set; }
-        public Country HomeCountry { get; set; }
+        public int CountyID { get; set; }
+        virtual public County HomeCounty { get; set; }
 
-        public Town(int ID, string name, int CountryID, Inhabitant inhabitants)
+        public Town(int ID, string name, int CountyID)
         {
             this.TownID = ID;
             this.TownName = name;
-            this.CountryID = CountryID;
-            this.Inhabitants = (ICollection<Inhabitant>)inhabitants;
+            this.CountyID = CountyID;
         }
-        public Town(int ID, string name, int CountryID)
+
+        public Town(string input)
         {
-            this.TownID = ID;
-            this.TownName = name;
-            this.CountryID = CountryID;
+            string[] cutInput = input.Split("#");
+            this.TownID = int.Parse(cutInput[0]);
+            this.TownName = cutInput[1];
+            this.CountyID = int.Parse(cutInput[2]);
+        }
+        public Town()
+        {
+
         }
     }
 }
