@@ -52,6 +52,7 @@ namespace RT09QT_HFT_2022231.Repository
             modelBuilder.Entity<Inhabitant>()
                 .HasOne(x => x.Location)
                 .WithMany(x => x.Inhabitants)
+                .HasForeignKey(x=>x.LocationID)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
             modelBuilder.Entity<Country>().HasData(new Country[]{
@@ -64,8 +65,11 @@ namespace RT09QT_HFT_2022231.Repository
             modelBuilder.Entity<County>().HasData(new County[]
             {
                 new County("1#Salyan District#1"),
+
                 new County("2#Namur#2"),
+
                 new County("3#Ontario#3"),
+
                 new County("4#Ribe County#4")
             });
 
@@ -73,15 +77,30 @@ namespace RT09QT_HFT_2022231.Repository
             {
                 new Town("1#Abadkend#1"),
                 new Town("2#Abad#1"),
-                new Town("3#Dinant#2"),
-                new Town("4#Killarney#3"),
-                new Town("5#Ribe#4")
 
+                new Town("3#Dinant#2"),
+
+                new Town("4#Killarney#3"),
+
+                new Town("5#Ribe#4")
             });
 
             modelBuilder.Entity<Inhabitant>().HasData(new Inhabitant[]
             {
+                new Inhabitant("1#John Doe#25#true#1"),
+                new Inhabitant("2#James Doe#37#true#1"),
+                new Inhabitant("3#Jane Doe#60#false#1"),
 
+                new Inhabitant("4#Anne Name#12#false#2"),
+                new Inhabitant("5#Ursula Default#25#false#2"),
+                new Inhabitant("6#Bob Basic#52#true#2"),
+
+                new Inhabitant("7#Joseph Doe#25#true#3"),
+                new Inhabitant("8#Thomas Total#33#true#3"),
+
+                new Inhabitant("9#Commander Total#54#true#4"),
+
+                new Inhabitant("10#Josephine Joestar#27#false#5"),
             });
 
 
