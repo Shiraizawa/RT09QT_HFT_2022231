@@ -23,6 +23,7 @@ namespace RT09QT_HFT_2022231.Models
         public bool Sex { get; set; }  //true=male, false=female
         [Required]
         virtual public Town Location { get; set; }
+        public int LocationID { get; set; }
         public Inhabitant(int inhabitantID, string name, int age, bool sex)
         {
             InhabitantID = inhabitantID;
@@ -37,6 +38,7 @@ namespace RT09QT_HFT_2022231.Models
             this.Name = cutInput[1];
             this.Age = int.Parse(cutInput[2]);
             this.Sex = bool.Parse(cutInput[3]);
+            this.LocationID = int.Parse(cutInput[4]);
         }
     }
 }
