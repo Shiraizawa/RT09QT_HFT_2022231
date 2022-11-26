@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RBGXWl4yGvSkoynA1QgSYe4s5mZSJhnY1RI5qZHYL+2m651Z70hJj8ayAgAwqqsXY3nCu4zpDxLcGdhGq2rh0Q==",
+  "dgSpecHash": "ytwLATU1Hob3T6Iu4HuwJKQNwqhmZET6dV7k9OBBU21lCQIojtoEj+iNRQa46p1YBMkCkBJK0F4lLiBRfb33Vg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+  "projectFilePath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amorgos\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "RT09QT_HFT_2022231.Client/1.0.0": {
         "dependencies": {
+          "RT09QT_HFT_2022231.Logic": "1.0.0",
           "RT09QT_HFT_2022231.Repository": "1.0.0"
         },
         "runtime": {
@@ -1321,6 +1322,15 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "RT09QT_HFT_2022231.Logic/1.0.0": {
+        "dependencies": {
+          "RT09QT_HFT_2022231.Models": "1.0.0",
+          "RT09QT_HFT_2022231.Repository": "1.0.0"
+        },
+        "runtime": {
+          "RT09QT_HFT_2022231.Logic.dll": {}
+        }
+      },
       "RT09QT_HFT_2022231.Models/1.0.0": {
         "runtime": {
           "RT09QT_HFT_2022231.Models.dll": {}
@@ -2277,6 +2287,11 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "RT09QT_HFT_2022231.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "RT09QT_HFT_2022231.Models/1.0.0": {
       "type": "project",

@@ -2333,6 +2333,20 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
+      "RT09QT_HFT_2022231.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "RT09QT_HFT_2022231.Models": "1.0.0",
+          "RT09QT_HFT_2022231.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT09QT_HFT_2022231.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT09QT_HFT_2022231.Logic.dll": {}
+        }
+      },
       "RT09QT_HFT_2022231.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7535,6 +7549,11 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
+    "RT09QT_HFT_2022231.Logic/1.0.0": {
+      "type": "project",
+      "path": "../RT09QT_HFT_2022231.Logic/RT09QT_HFT_2022231.Logic.csproj",
+      "msbuildProject": "../RT09QT_HFT_2022231.Logic/RT09QT_HFT_2022231.Logic.csproj"
+    },
     "RT09QT_HFT_2022231.Models/1.0.0": {
       "type": "project",
       "path": "../RT09QT_HFT_2022231.Models/RT09QT_HFT_2022231.Models.csproj",
@@ -7548,6 +7567,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "RT09QT_HFT_2022231.Logic >= 1.0.0",
       "RT09QT_HFT_2022231.Repository >= 1.0.0"
     ]
   },
@@ -7557,11 +7577,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+      "projectUniqueName": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
       "projectName": "RT09QT_HFT_2022231.Client",
-      "projectPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+      "projectPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
       "packagesPath": "C:\\Users\\amorgos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\obj\\",
+      "outputPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amorgos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7578,8 +7598,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Repository\\RT09QT_HFT_2022231.Repository.csproj": {
-              "projectPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Repository\\RT09QT_HFT_2022231.Repository.csproj"
+            "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Logic\\RT09QT_HFT_2022231.Logic.csproj": {
+              "projectPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Logic\\RT09QT_HFT_2022231.Logic.csproj"
+            },
+            "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Repository\\RT09QT_HFT_2022231.Repository.csproj": {
+              "projectPath": "C:\\Users\\amorgos\\source\\repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Repository\\RT09QT_HFT_2022231.Repository.csproj"
             }
           }
         }
