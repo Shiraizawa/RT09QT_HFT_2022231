@@ -19,7 +19,7 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(100)]
         public string CountryName { get; set; }
 
-       virtual public ICollection<County> Counties { get; set; }
+        virtual public ICollection<County> Counties { get; set; }
         public Country(int ID, string name)
         {
             this.CountryName = name;

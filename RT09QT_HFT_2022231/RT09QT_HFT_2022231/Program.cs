@@ -21,8 +21,8 @@ namespace RT09QT_HFT_2022231
             IEnumerable<int> c = aaa.GetCountyCountPerCountry(2);
             IEnumerable<int> d = aaa.GetCountyCountPerCountry(3);
             IEnumerable<int> e = aaa.GetCountyCountPerCountry(4);
-            IEnumerable<CountryInhabitantStatistics> count = aaa.GetInhabitantCountPerCountry();
-            IEnumerable<CountryInhabitantStatistics> count2 = aaa.GetInhabitantCountPerSpecificCountry(1);
+            IEnumerable<CountryInhabitantStatistics> count = aaa.GetInhabitantStatisticsPerCountry();
+            IEnumerable<CountryInhabitantStatistics> count2 = aaa.GetInhabitantStatisticsPerSpecificCountry(1);
 
             ;
         }

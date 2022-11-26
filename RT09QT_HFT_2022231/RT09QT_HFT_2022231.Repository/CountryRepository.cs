@@ -45,7 +45,7 @@ namespace RT09QT_HFT_2022231.Repository
         {
             var oldCountry = Read(country.CountryID);
             oldCountry.CountryName = country.CountryName;
-            oldCountry.Counties = country.Counties; 
+            if(country.Counties!=null) oldCountry.Counties = country.Counties;
             this.context.SaveChanges();
         }
     }
