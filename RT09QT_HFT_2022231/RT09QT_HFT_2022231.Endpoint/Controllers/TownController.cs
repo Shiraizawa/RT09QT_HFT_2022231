@@ -3,48 +3,50 @@ using RT09QT_HFT_2022231.Logic.Interfaces;
 using RT09QT_HFT_2022231.Models;
 using System.Collections.Generic;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace RT09QT_HFT_2022231.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CountryController : ControllerBase
+    public class TownController : ControllerBase
     {
-        ICountryLogic logic;
+        ITownLogic logic;
 
-        public CountryController(ICountryLogic logic)
+        public TownController(ITownLogic logic)
         {
             this.logic = logic;
         }
 
-        // GET: api/<CountryController>
+        // GET: api/<TownController>
         [HttpGet]
-        public IEnumerable<Country> ReadAll()
+        public IEnumerable<Town> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
-        // GET api/<CountryController>/5
+        // GET api/<TownController>/5
         [HttpGet("{id}")]
-        public Country Read(int id)
+        public Town Read(int id)
         {
             return this.logic.Read(id);
         }
 
-        // POST api/<CountryController>
+        // POST api/<TownController>
         [HttpPost]
-        public void Create([FromBody] Country value)
+        public void Create([FromBody] Town value)
         {
             this.logic.Create(value);
         }
 
-        // PUT api/<CountryController>/5
+        // PUT api/<TownController>/5
         [HttpPut]
-        public void Update([FromBody] Country value)
+        public void Update([FromBody] Town value)
         {
             this.logic.Update(value);
         }
 
-        // DELETE api/<CountryController>/5
+        // DELETE api/<TownController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
