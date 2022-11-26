@@ -18,7 +18,6 @@ namespace RT09QT_HFT_2022231.Repository
         {
             if (!builder.IsConfigured)
             {
-                string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\country.mdf;Integrated Security=True;MultipleActiveResultSets=true";
                 builder
                     .UseInMemoryDatabase("country")
                     .UseLazyLoadingProxies();
@@ -26,7 +25,7 @@ namespace RT09QT_HFT_2022231.Repository
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { // create entity builders
+        { 
 
             modelBuilder.Entity<Country>()
                 .HasMany(x => x.Counties)
