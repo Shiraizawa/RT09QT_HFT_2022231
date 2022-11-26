@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace RT09QT_HFT_2022231.Test
 {
-    public class CountryLogic
+    public class CountryLogic : ICountryLogic
     {
         ICountryRepository repository;
 
@@ -31,33 +31,60 @@ namespace RT09QT_HFT_2022231.Test
             {
                 throw new ArgumentException("This country does not exist");
             }
-                this.repository.Delete(id);
+            this.repository.Delete(id);
         }
 
         public Country Read(int id)
         {
             var Country = this.repository.Read(id);
-            if(Country == null)
+            if (Country == null)
             {
                 throw new ArgumentException("This country does not exist");
             }
-           return this.repository.Read(id);
+            return this.repository.Read(id);
         }
 
         public IEnumerable<Country> ReadAll()
         {
-          return this.repository.ReadAll();
+            return this.repository.ReadAll();
         }
 
-       public void Update(Country country)
+        public void Update(Country country)
         {
             this.repository.Update(country);
         }
-        public int? GetCountyCountPerCountry(int countryId)
+        public IEnumerable<int> GetCountyCountPerCountry(int countryID)
         {
-            return this.repository
+            IEnumerable<int> result = new int[] {this.repository
                 .ReadAll()
-                .Where(t => t.CountryID == countryId).Count();
+                .Where(t => t.CountryID == countryID).Count()};
+            return result;
+
+        }
+        public IEnumerable<int> GetTownCountPerCountry(int countryID)
+        {
+            Country country = (Country)this.repository.ReadAll().Where(x => x.CountryID == countryID).ToList()[0];
+            int count = 0;
+            foreach (County county in country.Counties)
+            {
+                count += county.Towns.Count();
+            }
+            IEnumerable<int> result = new int[] { count };
+            return result;
+        }
+        public IEnumerable<int> GetInhabitantCountPerCountry(int countryID)
+        {
+            Country country = (Country)this.repository.ReadAll().Where(x => x.CountryID == countryID).ToList()[0];
+            int count = 0;
+            foreach (County county in country.Counties)
+            {
+                foreach (Town town in county.Towns)
+                {
+                    count += town.InhabitantCount;
+                }
+            }
+            IEnumerable<int> result = new int[] { count };
+            return result;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Logic
 {
-    internal class TownLogic
+    internal class TownLogic : ITownLogic
     {
         ITownRepository repository;
 
@@ -29,7 +29,7 @@ namespace RT09QT_HFT_2022231.Logic
             {
                 throw new ArgumentException("This town does not exist");
             }
-                this.repository.Delete(id);
+            this.repository.Delete(id);
         }
 
         public Town Read(int id)

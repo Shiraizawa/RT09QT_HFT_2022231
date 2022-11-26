@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace RT09QT_HFT_2022231.Logic
 {
-    public class CountyLogic
+    public class CountyLogic : ICountyLogic
     {
         ICountyRepository repository;
 
@@ -28,7 +28,7 @@ namespace RT09QT_HFT_2022231.Logic
             {
                 throw new ArgumentException("This county does not exist");
             }
-                this.repository.Delete(id);
+            this.repository.Delete(id);
         }
 
         public County Read(int id)
@@ -38,7 +38,7 @@ namespace RT09QT_HFT_2022231.Logic
             {
                 throw new ArgumentException("This county does not exist");
             }
-                return this.repository.Read(id);
+            return this.repository.Read(id);
         }
 
         public IEnumerable<County> ReadAll()
@@ -50,20 +50,27 @@ namespace RT09QT_HFT_2022231.Logic
         {
             this.repository.Update(county);
         }
-        //Folytköv
-        public int? GetTownCountPerCounty(int countyId)
+        public IEnumerable<int> GetTownCountPerCounty(int countyId)
         {
-            return this.repository
+            IEnumerable<int> result = new int[] {this.repository
                 .ReadAll()
-                .Where(t => t.CountyID == countyId).Count();
+                .Where(t => t.CountyID == countyId).Count()};
+            return result;
         }
 
-        public int? GetInhabitantCountPerCounty()
+        public IEnumerable<int> GetInhabitantCountPerCounty(int CountyID)
         {
-           
-            return from x in this.repository.ReadAll()
+
+            County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
+            int count = 0;
+            foreach (Town town in county.Towns)
+            {
+                count += town.InhabitantCount;
+            }
+            IEnumerable<int> result = new int[count];
+            return result;
         }
 
-        //Folytköv
+
     }
 }
