@@ -1,4 +1,5 @@
-﻿using RT09QT_HFT_2022231.Logic.Interfaces;
+﻿using RT09QT_HFT_2022231.Logic;
+using RT09QT_HFT_2022231.Logic.Interfaces;
 using RT09QT_HFT_2022231.Models;
 using RT09QT_HFT_2022231.Repository;
 using System;
@@ -73,19 +74,79 @@ namespace RT09QT_HFT_2022231.Test
             IEnumerable<int> result = new int[] { count };
             return result;
         }
-       public IEnumerable<int> GetInhabitantCountPerCountry(int countryID)
+        public IEnumerable<CountryInhabitantStatistics> GetInhabitantCountPerCountry()
         {
-            //Country country = (Country)this.repository.ReadAll().Where(x => x.CountryID == countryID).ToList()[0];
-            int count = 0;
-           /* foreach (County county in country.Counties)
+            IEnumerable<Country> countries = this.repository.ReadAll();
+            List<CountryInhabitantStatistics> result= new List<CountryInhabitantStatistics>();
+            foreach (Country country in countries)
             {
-                foreach (Town town in county.Towns)
+                List<InhabitantStatistics> statistics = new List<InhabitantStatistics>();
+                foreach (County county in country.Counties)
                 {
-                    count += town.InhabitantCount;
+                    
+                    foreach (Town town in county.Towns)
+                    {
+                        int maleCount = 0;
+                        int femaleCount = 0;
+                        int avgAge = 0;
+                        int count = 0;
+                        foreach (Inhabitant inhabitant in town.Inhabitants)
+                        {
+                            if (inhabitant.Sex == true)
+                                maleCount++;
+                            else femaleCount++;
+                            count++;
+                            avgAge += inhabitant.Age;
+                        }
+                        statistics.Add(new InhabitantStatistics(maleCount, femaleCount, (avgAge / count), count));
+                    }
+                    
                 }
-            }*/
-            IEnumerable<int> result = new int[] { count };
+                result.Add(new CountryInhabitantStatistics(statistics, country.CountryID));
+            }
             return result;
+        }
+        public IEnumerable<CountryInhabitantStatistics> GetInhabitantCountPerSpecificCountry(int countryID)
+        {
+            IEnumerable<Country> countries = this.repository.ReadAll().Where(x=>x.CountryID==countryID);
+            List<CountryInhabitantStatistics> result = new List<CountryInhabitantStatistics>();
+            foreach (Country country in countries)
+            {
+                List<InhabitantStatistics> statistics = new List<InhabitantStatistics>();
+                foreach (County county in country.Counties)
+                {
+
+                    foreach (Town town in county.Towns)
+                    {
+                        int maleCount = 0;
+                        int femaleCount = 0;
+                        double avgAge = 0;
+                        int count = 0;
+                        foreach (Inhabitant inhabitant in town.Inhabitants)
+                        {
+                            if (inhabitant.Sex == true)
+                                maleCount++;
+                            else femaleCount++;
+                            count++;
+                            avgAge += inhabitant.Age;
+                        }
+                        statistics.Add(new InhabitantStatistics(maleCount, femaleCount, (avgAge / count), count));
+                    }
+
+                }
+                result.Add(new CountryInhabitantStatistics(statistics, country.CountryID));
+            }
+            return result;
+        }
+    }
+    public class CountryInhabitantStatistics
+    {
+        IEnumerable<InhabitantStatistics> inhabitantStatistics { get; set;}
+        public int countryID;
+        public CountryInhabitantStatistics(IEnumerable<InhabitantStatistics> inhabitantStatistics, int country)
+        {
+            this.inhabitantStatistics = inhabitantStatistics;
+            this.countryID = country;
         }
     }
 }

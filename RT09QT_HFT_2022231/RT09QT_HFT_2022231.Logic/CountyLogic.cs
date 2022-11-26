@@ -59,19 +59,46 @@ namespace RT09QT_HFT_2022231.Logic
             return result;
         }
 
-        public IEnumerable<int> GetInhabitantCountPerCounty(int CountyID)
+        public IEnumerable<InhabitantStatistics> GetInhabitantStatisticsPerCounty( int CountyID)
         {
 
-           // County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
-            int count = 0;
-           /* foreach (Town town in county.Towns)
-            {
-                count += town.InhabitantCount;
-            }*/
-            IEnumerable<int> result = new int[count];
+             County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
+             List<InhabitantStatistics> statistics= new List<InhabitantStatistics>();
+             foreach (Town town in county.Towns)
+             {
+                 int maleCount = 0;
+                 int femaleCount = 0;
+                 int avgAge = 0;
+                 int count = 0;
+                 foreach (Inhabitant inhabitant in town.Inhabitants)
+                 {
+                     if (inhabitant.Sex == true)
+                         maleCount++;
+                     else femaleCount++;
+                    count++;
+                    avgAge += inhabitant.Age;
+                 }
+                statistics.Add(new InhabitantStatistics(maleCount,femaleCount,(avgAge/count),count));
+             }
+            IEnumerable<InhabitantStatistics> result = statistics;
             return result;
-        }
-       
 
+        }
+
+
+    }
+    public class InhabitantStatistics
+    {
+        public int maleCount { get; set; }
+        public int femaleCount { get; set; }
+        public double? averageAge { get; set; }
+        public int allInhabitants { get; set; }
+        public InhabitantStatistics(int maleCount,  int femaleCount, double averageAge, int allInhabitants)
+        {
+            this.maleCount= maleCount;
+            this.femaleCount= femaleCount;
+            this.averageAge= averageAge;
+            this.allInhabitants= allInhabitants;
+        }
     }
 }
