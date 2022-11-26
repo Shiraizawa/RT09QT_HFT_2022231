@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace RT09QT_HFT_2022231.Models
 {
@@ -22,6 +23,7 @@ namespace RT09QT_HFT_2022231.Models
         [Required]
         public bool? Sex { get; set; }  //true=male, false=female
         [Required]
+        [JsonIgnore]
         virtual public Town Location { get; set; }
         public int LocationID { get; set; }
         public Inhabitant(int inhabitantID, string name, int age, bool sex)

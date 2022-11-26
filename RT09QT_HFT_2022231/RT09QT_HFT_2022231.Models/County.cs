@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Models
@@ -21,6 +22,7 @@ namespace RT09QT_HFT_2022231.Models
 
 
         public int CountryID { get; set; }
+        [JsonIgnore]
         virtual public Country HomeCountry { get; set; } 
         virtual public ICollection<Town> Towns { get; set; }
 
