@@ -6,6 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RT09QT_HFT_2022231.Logic;
+using RT09QT_HFT_2022231.Logic.Interfaces;
+using RT09QT_HFT_2022231.Repository;
+using RT09QT_HFT_2022231.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +29,16 @@ namespace RT09QT_HFT_2022231.Endpoint
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<CountryDbContext>();
+            services.AddTransient<ICountryRepository,  CountryRepository>();
+            services.AddTransient<ICountyRepository, CountyRepository>();
+            services.AddTransient<ITownRepository, TownRepository>();
+            services.AddTransient<IinhabitantRepository, InhabitantRepository>();
+
+            services.AddTransient<ICountryLogic, CountryLogic>();
+            services.AddTransient<ICountyLogic, CountyLogic>();
+            services.AddTransient<ITownLogic, TownLogic>();
+            services.AddTransient<IInhabitantLogic, InhabitantLogic>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
