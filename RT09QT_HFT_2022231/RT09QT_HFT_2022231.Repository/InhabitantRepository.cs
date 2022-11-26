@@ -50,7 +50,7 @@ namespace RT09QT_HFT_2022231.Repository
             oldInhabitant.Name= inhabitant.Name;
             oldInhabitant.Sex= inhabitant.Sex;
             oldInhabitant.Age= inhabitant.Age;
-            oldInhabitant.Location= inhabitant.Location;
+            oldInhabitant.LocationID= inhabitant.LocationID;
         }
     }
 }
