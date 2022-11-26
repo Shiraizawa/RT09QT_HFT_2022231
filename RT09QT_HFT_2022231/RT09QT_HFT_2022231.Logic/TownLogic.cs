@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Logic
 {
-    internal class TownLogic : ITownLogic
+    public class TownLogic : ITownLogic
     {
         ITownRepository repository;
 
