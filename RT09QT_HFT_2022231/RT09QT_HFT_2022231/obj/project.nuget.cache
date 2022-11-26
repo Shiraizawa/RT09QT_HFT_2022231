@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "auq8OMsnTqtblXPFq71k7I/BLN1B1VHtybWJwBg3Y7nWSXtFHnVfNUU0ZPTnsY1AlbIdZa1SNp8EvDXb5Dah6w==",
+  "dgSpecHash": "gY+BuGVR/csnbRgknCUuw3V8sOXkkN2JyR6N0U2gGLNnkj5KAMQUTZ+DGzUYacBfMaJP6n9Ns/9G6xzZO+gZbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\amorgos\\source\\repos\\Anyád\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amorgos\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
+    "C:\\Users\\amorgos\\.nuget\\packages\\consolemenu-simple\\2.4.2\\consolemenu-simple.2.4.2.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
