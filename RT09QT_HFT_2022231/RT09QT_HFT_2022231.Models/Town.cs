@@ -17,12 +17,12 @@ namespace RT09QT_HFT_2022231.Models
         public int TownID { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(85)] //Longest town name is 85 characters long
         public string TownName { get; set; }
 
         public int CountyID { get; set; }
         virtual public County HomeCounty { get; set; }
-        int InhabitantCount { get; set; }
+        virtual public Inhabitant[] Inhabitants { get; set; }
 
         public Town(int ID, string name, int CountyID)
         {
@@ -37,7 +37,6 @@ namespace RT09QT_HFT_2022231.Models
             this.TownID = int.Parse(cutInput[0]);
             this.TownName = cutInput[1];
             this.CountyID = int.Parse(cutInput[2]);
-            this.InhabitantCount = int.Parse(cutInput[3]);
         }
         public Town()
         {

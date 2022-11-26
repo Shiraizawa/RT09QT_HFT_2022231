@@ -20,9 +20,9 @@ namespace RT09QT_HFT_2022231.Models
         public string CountyName { get; set; }
 
 
-        public int CountryID { get; set; }
-        virtual public Country HomeCountry { get; set; }
-       virtual public ICollection<Town> Towns { get; set; }
+        virtual public int CountryID { get; set; }
+        virtual public Country HomeCountry { get; set; } 
+        virtual public ICollection<Town> Towns { get; set; }
 
         public County(int ID, string name, int CountryID)
         {
