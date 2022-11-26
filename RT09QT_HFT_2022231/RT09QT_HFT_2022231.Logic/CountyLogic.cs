@@ -1,4 +1,5 @@
-﻿using RT09QT_HFT_2022231.Models;
+﻿using RT09QT_HFT_2022231.Logic.Interfaces;
+using RT09QT_HFT_2022231.Models;
 using RT09QT_HFT_2022231.Repository;
 using System;
 using System.Collections.Generic;
@@ -61,16 +62,16 @@ namespace RT09QT_HFT_2022231.Logic
         public IEnumerable<int> GetInhabitantCountPerCounty(int CountyID)
         {
 
-            County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
+           // County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
             int count = 0;
-            foreach (Town town in county.Towns)
+           /* foreach (Town town in county.Towns)
             {
                 count += town.InhabitantCount;
-            }
+            }*/
             IEnumerable<int> result = new int[count];
             return result;
         }
-
+       
 
     }
 }

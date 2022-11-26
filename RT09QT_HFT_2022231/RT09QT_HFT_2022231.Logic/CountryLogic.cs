@@ -1,4 +1,5 @@
-﻿using RT09QT_HFT_2022231.Models;
+﻿using RT09QT_HFT_2022231.Logic.Interfaces;
+using RT09QT_HFT_2022231.Models;
 using RT09QT_HFT_2022231.Repository;
 using System;
 using System.Collections.Generic;
@@ -72,17 +73,17 @@ namespace RT09QT_HFT_2022231.Test
             IEnumerable<int> result = new int[] { count };
             return result;
         }
-        public IEnumerable<int> GetInhabitantCountPerCountry(int countryID)
+       public IEnumerable<int> GetInhabitantCountPerCountry(int countryID)
         {
-            Country country = (Country)this.repository.ReadAll().Where(x => x.CountryID == countryID).ToList()[0];
+            //Country country = (Country)this.repository.ReadAll().Where(x => x.CountryID == countryID).ToList()[0];
             int count = 0;
-            foreach (County county in country.Counties)
+           /* foreach (County county in country.Counties)
             {
                 foreach (Town town in county.Towns)
                 {
                     count += town.InhabitantCount;
                 }
-            }
+            }*/
             IEnumerable<int> result = new int[] { count };
             return result;
         }
