@@ -27,9 +27,9 @@ namespace RT09QT_HFT_2022231.Logic
             {
                 throw new ArgumentException("Name cannot be null.");
             }
-            else if (inhabitant.Sex == null)
+            else if(inhabitant.LocationID==null || inhabitant.LocationID==0)
             {
-                throw new ArgumentException("There are only two genders. You must choose to belong to one.");
+                throw new ArgumentException("Location ID cannot be null or zero.");
             }
             this.repository.Create(inhabitant);
         }
@@ -58,6 +58,18 @@ namespace RT09QT_HFT_2022231.Logic
 
         public void Update(Inhabitant inhabitant)
         {
+            if (inhabitant.Age < 0)
+            {
+                throw new ArgumentException("Age cannot be lower than zero.");
+            }
+            else if (inhabitant.Name == null)
+            {
+                throw new ArgumentException("Name cannot be null.");
+            }
+            else if (inhabitant.LocationID == null || inhabitant.LocationID == 0)
+            {
+                throw new ArgumentException("Location ID cannot be null or zero.");
+            }
             this.repository.Update(inhabitant);
         }
     }

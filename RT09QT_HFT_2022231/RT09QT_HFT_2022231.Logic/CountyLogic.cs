@@ -19,6 +19,9 @@ namespace RT09QT_HFT_2022231.Logic
 
         public void Create(County county)
         {
+            if(county.CountyName== null) { throw new ArgumentException("County name cannot be null."); }
+            else if(county.CountryID==null || county.CountryID==0) { throw new ArgumentException("Country ID cannot be null or zero."); }
+
             this.repository.Create(county);
         }
 
@@ -49,6 +52,8 @@ namespace RT09QT_HFT_2022231.Logic
 
         public void Update(County county)
         {
+            if (county.CountyName == null) { throw new ArgumentException("County name cannot be null."); }
+            else if (county.CountryID == null || county.CountryID == 0) { throw new ArgumentException("Country ID cannot be null or zero."); }
             this.repository.Update(county);
         }
 
