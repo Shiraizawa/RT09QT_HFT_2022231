@@ -51,39 +51,6 @@ namespace RT09QT_HFT_2022231.Logic
         {
             this.repository.Update(county);
         }
-        public IEnumerable<int> GetTownCountPerCounty(int countyId)
-        {
-            IEnumerable<int> result = new int[] {this.repository
-                .ReadAll()
-                .Where(t => t.CountyID == countyId).Count()};
-            return result;
-        }
-
-        public IEnumerable<InhabitantStatistics> GetInhabitantStatisticsPerCounty( int CountyID)
-        {
-
-             County county = (County)this.repository.ReadAll().Where(x => x.CountyID == CountyID);
-             List<InhabitantStatistics> statistics= new List<InhabitantStatistics>();
-             foreach (Town town in county.Towns)
-             {
-                 int maleCount = 0;
-                 int femaleCount = 0;
-                 int avgAge = 0;
-                 int count = 0;
-                 foreach (Inhabitant inhabitant in town.Inhabitants)
-                 {
-                     if (inhabitant.Sex == true)
-                         maleCount++;
-                     else femaleCount++;
-                    count++;
-                    avgAge += inhabitant.Age;
-                 }
-                statistics.Add(new InhabitantStatistics(maleCount,femaleCount,(avgAge/count),count));
-             }
-            IEnumerable<InhabitantStatistics> result = statistics;
-            return result;
-
-        }
 
 
     }
@@ -91,14 +58,27 @@ namespace RT09QT_HFT_2022231.Logic
     {
         public int maleCount { get; set; }
         public int femaleCount { get; set; }
-        public double? averageAge { get; set; }
+        public int averageAge { get; set; }
         public int allInhabitants { get; set; }
-        public InhabitantStatistics(int maleCount,  int femaleCount, double averageAge, int allInhabitants)
+        public InhabitantStatistics(int maleCount,  int femaleCount, int averageAge, int allInhabitants)
         {
             this.maleCount= maleCount;
             this.femaleCount= femaleCount;
             this.averageAge= averageAge;
             this.allInhabitants= allInhabitants;
+        }
+        public override bool Equals(object obj)
+        {
+            InhabitantStatistics b= obj  as InhabitantStatistics;
+            if (b==null) return false;
+            else
+            {
+                return this.maleCount==b.maleCount && this.femaleCount==b.femaleCount && this.averageAge == b.averageAge && this.allInhabitants==b.allInhabitants;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.maleCount,this.femaleCount,this.averageAge,this.allInhabitants);
         }
     }
 }
