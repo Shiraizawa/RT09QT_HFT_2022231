@@ -1,4 +1,5 @@
-﻿using RT09QT_HFT_2022231.Models;
+﻿using RT09QT_HFT_2022231.Logic.Interfaces;
+using RT09QT_HFT_2022231.Models;
 using RT09QT_HFT_2022231.Repository;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace RT09QT_HFT_2022231.Logic
 {
-    public class InhabitantLogic
+    public class InhabitantLogic : IInhabitantLogic
     {
         IinhabitantRepository repository;
         public InhabitantLogic(IinhabitantRepository repository)
         {
-            
+
             this.repository = repository;
         }
         public void Create(Inhabitant inhabitant)
@@ -22,7 +23,7 @@ namespace RT09QT_HFT_2022231.Logic
             {
                 throw new ArgumentException("Age cannot be lower than zero.");
             }
-            else if(inhabitant.Name == null)
+            else if (inhabitant.Name == null)
             {
                 throw new ArgumentException("Name cannot be null.");
             }
