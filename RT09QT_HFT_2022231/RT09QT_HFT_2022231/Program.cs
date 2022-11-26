@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using ConsoleTools;
-using RT09QT_HFT_2022231.Client;
+
 using RT09QT_HFT_2022231.Models;
 
 
-namespace RT09QT_HFT_2022231
+namespace RT09QT_HFT_2022231.Client
 {
     class Program
     {
@@ -14,7 +14,7 @@ namespace RT09QT_HFT_2022231
         static void Main(string[] args)
         {
 
-             rest = new RestService("http://localhost:53486", "country");
+             rest = new RestService("http://localhost:53486/", "country");
 
              static void Update(string v)
             {
