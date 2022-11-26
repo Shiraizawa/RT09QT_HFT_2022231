@@ -7,7 +7,7 @@ namespace RT09QT_HFT_2022231.Logic.Interfaces
     {
         void Create(County county);
         void Delete(int id);
-        IEnumerable<int> GetInhabitantCountPerCounty(int CountyID);
+        IEnumerable<InhabitantStatistics> GetInhabitantStatisticsPerCounty(int CountyID);
         IEnumerable<int> GetTownCountPerCounty(int countyId);
         County Read(int id);
         IEnumerable<County> ReadAll();

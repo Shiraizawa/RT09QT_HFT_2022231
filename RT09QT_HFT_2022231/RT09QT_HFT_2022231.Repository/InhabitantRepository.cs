@@ -16,7 +16,7 @@ namespace RT09QT_HFT_2022231.Repository
         public Inhabitant Read(int id);
         public IQueryable<Inhabitant> ReadAll();
     }
-    internal class InhabitantRepository : IinhabitantRepository
+    public class InhabitantRepository : IinhabitantRepository
     {
         CountryDbContext context;
         public InhabitantRepository(CountryDbContext context)

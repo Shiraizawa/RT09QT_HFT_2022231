@@ -22,7 +22,7 @@ namespace RT09QT_HFT_2022231.Models
 
         public int CountyID { get; set; }
         virtual public County HomeCounty { get; set; }
-        virtual public Inhabitant[] Inhabitants { get; set; }
+        virtual public ICollection<Inhabitant> Inhabitants { get; set; }
 
         public Town(int ID, string name, int CountyID)
         {

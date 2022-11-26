@@ -20,7 +20,7 @@ namespace RT09QT_HFT_2022231.Models
 
         public int Age { get; set; }
         [Required]
-        public bool Sex { get; set; }  //true=male, false=female
+        public bool? Sex { get; set; }  //true=male, false=female
         [Required]
         virtual public Town Location { get; set; }
         public int LocationID { get; set; }
@@ -39,6 +39,10 @@ namespace RT09QT_HFT_2022231.Models
             this.Age = int.Parse(cutInput[2]);
             this.Sex = bool.Parse(cutInput[3]);
             this.LocationID = int.Parse(cutInput[4]);
+        }
+        public Inhabitant()
+        {
+
         }
     }
 }
