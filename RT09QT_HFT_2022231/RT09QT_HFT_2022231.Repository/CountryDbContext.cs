@@ -9,6 +9,7 @@ namespace RT09QT_HFT_2022231.Repository
         public DbSet<County> Counties { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Town> Towns { get; set; }
+        public DbSet<Inhabitant> Inhabitants { get; set; }
 
         public CountryDbContext()
         {
@@ -30,6 +31,7 @@ namespace RT09QT_HFT_2022231.Repository
             modelBuilder.Entity<Country>()
                 .HasMany(x => x.Counties)
                 .WithOne(x=>x.HomeCountry)
+                .HasForeignKey(x=>x.CountryID)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
 
@@ -37,6 +39,7 @@ namespace RT09QT_HFT_2022231.Repository
             modelBuilder.Entity<County>()
                 .HasMany(x=> x.Towns)
                 .WithOne(x=> x.HomeCounty)
+                .HasForeignKey(x=>x.CountyID)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
 
@@ -46,7 +49,11 @@ namespace RT09QT_HFT_2022231.Repository
                 .HasForeignKey(x => x.CountyID)
                 .OnDelete(DeleteBehavior.Cascade)
             ;
-
+            modelBuilder.Entity<Inhabitant>()
+                .HasOne(x => x.Location)
+                .WithMany(x => x.Inhabitants)
+                .OnDelete(DeleteBehavior.Cascade)
+            ;
             modelBuilder.Entity<Country>().HasData(new Country[]{
                 new Country("1#Azerbaijan"),
                 new Country("2#Belgium"),
@@ -64,11 +71,16 @@ namespace RT09QT_HFT_2022231.Repository
 
             modelBuilder.Entity<Town>().HasData(new Town[]
             {
-                new Town("1#Abadkend#1#2680"),
-                new Town("2#Abad#1#1716"),
-                new Town("3#Dinant#2#13544"),
-                new Town("4#Killarney#3#386"),
-                new Town("5#Ribe#4#8257")
+                new Town("1#Abadkend#1"),
+                new Town("2#Abad#1"),
+                new Town("3#Dinant#2"),
+                new Town("4#Killarney#3"),
+                new Town("5#Ribe#4")
+
+            });
+
+            modelBuilder.Entity<Inhabitant>().HasData(new Inhabitant[]
+            {
 
             });
 
