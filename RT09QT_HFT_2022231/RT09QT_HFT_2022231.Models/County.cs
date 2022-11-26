@@ -20,7 +20,7 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(100)]
         public string CountyName { get; set; }
 
-
+        [Required]
         public int CountryID { get; set; }
         [JsonIgnore]
         virtual public Country HomeCountry { get; set; } 

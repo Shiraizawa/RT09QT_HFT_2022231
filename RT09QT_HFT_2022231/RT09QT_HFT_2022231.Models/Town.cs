@@ -21,6 +21,7 @@ namespace RT09QT_HFT_2022231.Models
         [StringLength(85)] //Longest town name is 85 characters long
         public string TownName { get; set; }
 
+        [Required]
         public int CountyID { get; set; }
         [JsonIgnore]
         virtual public County HomeCounty { get; set; }

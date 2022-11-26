@@ -20,11 +20,12 @@ namespace RT09QT_HFT_2022231.Models
         public string Name { get; set; }
 
         public int Age { get; set; }
-        [Required]
+        
         public bool? Sex { get; set; }  //true=male, false=female
         [Required]
         [JsonIgnore]
         virtual public Town Location { get; set; }
+        [Required]
         public int LocationID { get; set; }
         public Inhabitant(int inhabitantID, string name, int age, bool sex)
         {
