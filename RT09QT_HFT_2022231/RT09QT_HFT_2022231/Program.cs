@@ -220,7 +220,7 @@ namespace RT09QT_HFT_2022231.Client
 
         private static void GetCountyCountAllCountry()
         {
-            throw new NotImplementedException();
+            ;
         }
 
         private static void GetCountyCountPerCountry()
