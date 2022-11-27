@@ -200,10 +200,7 @@ namespace RT09QT_HFT_2022231.Client
             Console.Write("CountryID=");
             int countryID = int.Parse(Console.ReadLine());
             List<Country> country = rest.Get<Country>("country");
-            foreach (Country country2 in country)
-            {
-                country2.
-            }
+            
         }
 
         private static void GetInhabitantStatisticsPerCountry()
