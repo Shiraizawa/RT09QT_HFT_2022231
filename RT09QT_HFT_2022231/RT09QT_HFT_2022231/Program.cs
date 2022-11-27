@@ -156,6 +156,11 @@ namespace RT09QT_HFT_2022231.Client
                 .Add("Create", () => Create("Country"))
                 .Add("Delete", () => Delete("Country"))
                 .Add("Update", () => Update("Country"))
+                .Add("GetCountyCountPerCountry", () => GetCountyCountPerCountry())
+                .Add("GetCountyCountAllCountry", () => GetCountyCountAllCountry())
+                .Add("GetTownCountPerCountry", () => GetTownCountPerCountry())
+                .Add("GetInhabitantStatisticsPerCountry",() => GetInhabitantStatisticsPerCountry())
+                .Add("GetInhabitantStatisticsPerSpecificCountry",() => GetInhabitantStatisticsPerSpecificCountry())
                 .Add("Exit", ConsoleMenu.Close);
 
             var countySubMenu = new ConsoleMenu(args, level: 1)
@@ -189,7 +194,41 @@ namespace RT09QT_HFT_2022231.Client
             menu.Show();
         }
 
+        private static void GetInhabitantStatisticsPerSpecificCountry()
+        {
+            
+            Console.Write("CountryID=");
+            int countryID = int.Parse(Console.ReadLine());
+            List<Country> country = rest.Get<Country>("country");
+            foreach (Country country2 in country)
+            {
+                country2.
+            }
+        }
 
-        
+        private static void GetInhabitantStatisticsPerCountry()
+        {
+           List<Country> countries= rest.GetInhabitantStatisticsPerCountry<Country>("country");
+
+            foreach (Country country in countries)
+            {
+                
+            }
+        }
+
+        private static void GetTownCountPerCountry()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void GetCountyCountAllCountry()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void GetCountyCountPerCountry()
+        {
+            ;
+        }
     }
 }

@@ -104,10 +104,10 @@ namespace RT09QT_HFT_2022231.Test
         [Test]
         public void CountryInhabitantsStatistics()
         {
-            var actual = c1.GetInhabitantStatisticsPerSpecificCountry(1).ToList<CountryInhabitantStatistics>();
+            var actual = c1.GetInhabitantStatisticsPerSpecificCountry(1).ToList<CountryLogic.CountryInhabitantStatistics>();
 
-            var expected = new List<CountryInhabitantStatistics>() {
-                new CountryInhabitantStatistics()
+            var expected = new List<CountryLogic.CountryInhabitantStatistics>() {
+                new CountryLogic.CountryInhabitantStatistics()
                 {
                     averageAge= 35,
                     maleCount=3,
@@ -115,7 +115,7 @@ namespace RT09QT_HFT_2022231.Test
                     allInhabitants=6,
                     countryID=1
                 }
-            }.ToList<CountryInhabitantStatistics>();
+            }.ToList<CountryLogic.CountryInhabitantStatistics>();
 
             Assert.AreEqual(expected, actual);
 
@@ -123,9 +123,9 @@ namespace RT09QT_HFT_2022231.Test
         [Test]
         public void CountryInhabitantsStatisticsAll()
         {
-            var actual = c1.GetInhabitantStatisticsPerCountry().ToList<CountryInhabitantStatistics>();
-            var expected = new List<CountryInhabitantStatistics>() {
-                new CountryInhabitantStatistics()
+            var actual = c1.GetInhabitantStatisticsPerCountry().ToList<CountryLogic.CountryInhabitantStatistics>();
+            var expected = new List<CountryLogic.CountryInhabitantStatistics>() {
+                new CountryLogic.CountryInhabitantStatistics()
                 {
                     averageAge= 35,
                     maleCount=3,
@@ -133,7 +133,7 @@ namespace RT09QT_HFT_2022231.Test
                     allInhabitants=6,
                     countryID=1
                 },
-                new CountryInhabitantStatistics()
+                new CountryLogic.CountryInhabitantStatistics()
                 {
                     averageAge= 29,
                     maleCount=2,
@@ -141,7 +141,7 @@ namespace RT09QT_HFT_2022231.Test
                     allInhabitants=2,
                     countryID=2
                 },
-                new CountryInhabitantStatistics()
+                new CountryLogic.CountryInhabitantStatistics()
                 {
                     averageAge= 54,
                     maleCount=1,
@@ -149,7 +149,7 @@ namespace RT09QT_HFT_2022231.Test
                     allInhabitants=1,
                     countryID=3
                 },
-                new CountryInhabitantStatistics()
+                new CountryLogic.CountryInhabitantStatistics()
                 {
                     averageAge= 27,
                     maleCount=0,
@@ -157,7 +157,7 @@ namespace RT09QT_HFT_2022231.Test
                     allInhabitants=1,
                     countryID=4
                 },
-            }.ToList<CountryInhabitantStatistics>();
+            }.ToList<CountryLogic.CountryInhabitantStatistics>();
             Assert.AreEqual(expected, actual);
         }
         [Test]

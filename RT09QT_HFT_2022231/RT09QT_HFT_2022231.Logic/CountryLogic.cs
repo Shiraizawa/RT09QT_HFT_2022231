@@ -1,5 +1,4 @@
-﻿using RT09QT_HFT_2022231.Logic;
-using RT09QT_HFT_2022231.Logic.Interfaces;
+﻿using RT09QT_HFT_2022231.Logic.Interfaces;
 using RT09QT_HFT_2022231.Models;
 using RT09QT_HFT_2022231.Repository;
 using System;
@@ -7,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace RT09QT_HFT_2022231.Test
+namespace RT09QT_HFT_2022231.Logic
 {
     public class CountryLogic : ICountryLogic
     {
@@ -170,40 +169,41 @@ namespace RT09QT_HFT_2022231.Test
             }
             return result;
         }
-    }
-    public class CountryInhabitantStatistics
-    {
-        public int maleCount { get; set; }
-        public int femaleCount { get; set; }
-        public int averageAge { get; set; }
-        public int allInhabitants { get; set; }
-        public int countryID;
-        public CountryInhabitantStatistics(int maleCount, int femaleCount, int averageAge, int allInhabitants, int countryID)
+        public class CountryInhabitantStatistics
         {
-            this.maleCount = maleCount;
-            this.femaleCount = femaleCount;
-            this.averageAge = averageAge;
-            this.allInhabitants = allInhabitants;
-            this.countryID= countryID;
-        }
-        public CountryInhabitantStatistics()
-        {
-
-        }
-
-        public override bool Equals(object obj)
-        {
-            CountryInhabitantStatistics b = obj as CountryInhabitantStatistics;
-            if(b==null) return false;
-            else
+            public int maleCount { get; set; }
+            public int femaleCount { get; set; }
+            public int averageAge { get; set; }
+            public int allInhabitants { get; set; }
+            public int countryID;
+            public CountryInhabitantStatistics(int maleCount, int femaleCount, int averageAge, int allInhabitants, int countryID)
             {
-                return this.maleCount == b.maleCount && this.femaleCount == b.femaleCount && this.averageAge == b.averageAge && this.allInhabitants == b.allInhabitants && this.countryID == b.countryID; ;
+                this.maleCount = maleCount;
+                this.femaleCount = femaleCount;
+                this.averageAge = averageAge;
+                this.allInhabitants = allInhabitants;
+                this.countryID = countryID;
+            }
+            public CountryInhabitantStatistics()
+            {
+
             }
 
-        }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(this.maleCount, this.femaleCount, this.averageAge, this.allInhabitants, this.countryID);
+            public override bool Equals(object obj)
+            {
+                CountryInhabitantStatistics b = obj as CountryInhabitantStatistics;
+                if (b == null) return false;
+                else
+                {
+                    return this.maleCount == b.maleCount && this.femaleCount == b.femaleCount && this.averageAge == b.averageAge && this.allInhabitants == b.allInhabitants && this.countryID == b.countryID; ;
+                }
+
+            }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(this.maleCount, this.femaleCount, this.averageAge, this.allInhabitants, this.countryID);
+            }
         }
     }
+    
 }
