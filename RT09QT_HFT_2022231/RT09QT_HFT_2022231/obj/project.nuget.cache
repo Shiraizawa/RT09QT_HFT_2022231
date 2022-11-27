@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JDogr4YDS1UUwVPbMbPF2NZlBSTAxgnoSj1m/tiAYbSevyEJBw4rYQ/ZZsiMcqAdq7lJbhOQe6NAYmGQFX+NnQ==",
+  "dgSpecHash": "X5jhTQMxCMP0vzsh5gYRG4zDHNDt5nPgBCs4AatLYOgCG/ulcvbCAFcGcIKkNiRFZpBSx4cNh8nx4qBnsbv1/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amorgos\\source\\repos\\Anyád\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
+  "projectFilePath": "C:\\Users\\amorgos\\Source\\Repos\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231\\RT09QT_HFT_2022231.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amorgos\\.nuget\\packages\\consolemenu-simple\\2.4.2\\consolemenu-simple.2.4.2.nupkg.sha512",
     "C:\\Users\\amorgos\\.nuget\\packages\\microsoft.aspnet.webapi\\5.2.7\\microsoft.aspnet.webapi.5.2.7.nupkg.sha512",

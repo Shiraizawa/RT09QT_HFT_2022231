@@ -22,7 +22,6 @@ namespace RT09QT_HFT_2022231.Models
         public int Age { get; set; }
         
         public bool? Sex { get; set; }  //true=male, false=female
-        [Required]
         [JsonIgnore]
         virtual public Town Location { get; set; }
         [Required]
