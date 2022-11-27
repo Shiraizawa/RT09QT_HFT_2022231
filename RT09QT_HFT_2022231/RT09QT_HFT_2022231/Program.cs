@@ -200,32 +200,55 @@ namespace RT09QT_HFT_2022231.Client
             Console.Write("CountryID=");
             int countryID = int.Parse(Console.ReadLine());
             List<Country> country = rest.Get<Country>("country");
-            
+            Country country1 = country.Where(x=>x.CountryID == countryID).FirstOrDefault();
+            CountryInhabitantStatistics a = country1.GetInhabitantStatisticsPerSpecificCountry().ToList()[0];
+            Console.Write($"Males = \t\t{a.maleCount} \nFemales = \t\t{a.femaleCount} \nAll inhabitants = \t{a.allInhabitants} \nAverage age = \t\t{a.averageAge}");
+            Console.ReadLine();
         }
 
         private static void GetInhabitantStatisticsPerCountry()
         {
-           List<Country> countries= rest.GetInhabitantStatisticsPerCountry<Country>("country");
-
-            foreach (Country country in countries)
+            List<Country> country = rest.Get<Country>("country");
+            foreach(Country country1 in  country)
             {
-                
+                CountryInhabitantStatistics a = country1.GetInhabitantStatisticsPerSpecificCountry().ToList()[0];
+                Console.Write($"Country ID = \t\t{country1.CountryID}\nMales = \t\t{a.maleCount} \nFemales = \t\t{a.femaleCount} \nAll inhabitants = \t{a.allInhabitants} \nAverage age = \t\t{a.averageAge}\n");
+                Console.WriteLine();
             }
+            Console.ReadLine();
         }
 
         private static void GetTownCountPerCountry()
         {
-            throw new NotImplementedException();
+            List<Country> country = rest.Get<Country>("country");
+            foreach(Country country1 in country)
+            {
+                int town_count = country1.GetTownCountPerCountry().ToList()[0];
+                Console.WriteLine($"Country id = \t{country1.CountryID}\nTown count = \t{town_count}\n");
+            }
+            Console.ReadLine() ;
         }
 
         private static void GetCountyCountAllCountry()
         {
-            ;
+            List<Country> country = rest.Get<Country>("country");
+            foreach (Country country1 in country)
+            {
+                int county_count = country1.GetCountyCountPerCountry().ToList()[0];
+                Console.WriteLine($"Country id = \t{country1.CountryID}\nCounty count = \t{county_count}\n");
+            }
+            Console.ReadLine();
         }
 
         private static void GetCountyCountPerCountry()
         {
-            ;
+            Console.Write("CountryID=");
+            int countryID = int.Parse(Console.ReadLine());
+            List<Country> country = rest.Get<Country>("country");
+            Country country1 = country.Where(x => x.CountryID == countryID).FirstOrDefault();
+            int county_count = country1.GetCountyCountPerCountry().ToList()[0];
+            Console.WriteLine($"County count = \t{county_count}\n");
+            Console.ReadLine();
         }
     }
 }

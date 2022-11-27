@@ -144,21 +144,6 @@ namespace RT09QT_HFT_2022231.Client
             response.EnsureSuccessStatusCode();
         }
 
-        public List<T> GetInhabitantStatisticsPerCountry<T>(string endpoint)
-        {
-            List<T> items = new List<T>();
-            HttpResponseMessage response = client.GetAsync(endpoint).GetAwaiter().GetResult();
-            if (response.IsSuccessStatusCode)
-            {
-                items = response.Content.ReadAsAsync<List<T>>().GetAwaiter().GetResult();
-            }
-            else
-            {
-                var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
-            }
-            return items;
-        }
 
     }
     public class RestExceptionInfo
